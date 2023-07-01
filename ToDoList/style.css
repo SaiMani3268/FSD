@@ -1,0 +1,65 @@
+body{
+    background-color:rgb(206, 232, 249);
+    background-repeat: no-repeat;
+}
+h1{
+    margin-top: 5%;
+    text-align: center;
+    color:maroon;
+}
+.container{
+    margin: 5% 20%;
+    border-radius: 5px;
+    padding: 2% 1%;
+    background-image:linear-gradient(to bottom right,violet,yellow);
+}
+
+.todo{
+    text-align: center;
+    border-color: 2px solid black;
+    margin: 5%;
+}
+
+#newtask{
+    width: 80%;
+    font-size: 20px;
+}
+
+#add{
+    color: white;
+    background-color:rgb(110, 93, 219);
+    width:fit-content;
+}
+
+button{
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+.todo p,#date{
+    font-size: 20px;
+}
+
+#todo-list{
+    margin-right: 7%;
+    margin-left: 7%;
+    display: flex;
+    flex-direction: column;
+    list-style-type:decimal-leading-zero;
+    width: 100%;
+}
+#todo-list li{
+    max-width: 80%;
+    font-size: 20px;
+    margin-bottom: 2%;
+}
+#todo-list button{
+    background-color: rgb(110, 93, 219);
+    color:white;
+    border-radius: 8%;
+}
+
+.child{
+    position:relative;
+    margin-left: 3%;
+}
