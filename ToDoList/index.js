@@ -22,13 +22,22 @@ function renderTodos() {
     deleteButton.textContent = 'Delete';
     deleteButton.classList.add('child');
 
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.classList.add('child');
+
     // Adding event listener to delete button
     deleteButton.addEventListener('click', () => {
       deleteTodo(index);
     });
 
+    editButton.addEventListener('click',() =>{
+      editTodo(index);
+    });
+
     // Appending the list item and delete button to the todo list
     listItem.appendChild(deleteButton);
+    listItem.appendChild(editButton);
     todoList.appendChild(listItem);
   });
 }
@@ -37,9 +46,11 @@ function renderTodos() {
 function addTodo() {
   // Getting the value from the input field
   const todoText = todoInput.value.trim();
-
+  if(todoText == ''){
+    alert("Please enter some text!!!");
+  }
   // Adding the todo to the array
-  if (todoText !== '') {
+  else if (todoText !== '') {
     todos.push(todoText);
     todoInput.value = '';
     renderTodos();
@@ -49,6 +60,15 @@ function addTodo() {
 // Function to delete a todo
 function deleteTodo(index) {
   todos.splice(index, 1);
+  renderTodos();
+}
+function  editTodo(index){
+  var editedTodo = prompt("Edit todo", todos[index]);
+        if (editedTodo === null || editedTodo === "") {
+          alert("Please enter some text!!!");
+          return;
+        }
+        todos[index] = editedTodo;
   renderTodos();
 }
 
